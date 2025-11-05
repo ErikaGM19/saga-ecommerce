@@ -8,7 +8,8 @@ SERVICES = [
     {"name":"payment","url": os.getenv("PAYMENT_URL","http://payment_service:5102")},
     {"name":"inventory","url": os.getenv("INVENTORY_URL","http://inventory_service:5103")},
     {"name":"order","url": os.getenv("ORDER_URL","http://order_service:5104")},
-    {"name":"notification","url": os.getenv("NOTIF_URL","http://notification_service:5107")},
+    {"name":"shipping","url": os.getenv("SHIPPING_URL","http://shipping_service:5105")},
+    {"name":"notification","url": os.getenv("NOTIF_URL","http://notification_service:5107")}, 
     {"name":"loyalty","url": os.getenv("LOYALTY_URL","http://loyalty_service:5108")}
 ]
 
