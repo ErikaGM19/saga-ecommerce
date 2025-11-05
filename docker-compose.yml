@@ -37,16 +37,16 @@ services:
     environment:
       - SERVICE_NAME=order_service
       - PORT=5104
-      - FAIL_RATE=0.0
-
-  notification_service:
-    build: ./services/2179652_notification_service
-    ports: ["5107:5107"]
+      - FAIL_RATE=0.0 
+  
+  shipping_service:
+    build: ./services/2240581_shipping_service
+    ports: ["5105:5105"]
     environment:
-      - SERVICE_NAME=notification_service
-      - PORT=5107
-      - FAIL_RATE=0.4
-
+      - SERVICE_NAME=shipping_service
+      - PORT=5105
+      - FAIL_RATE=0.0
+      
   billing_service:
     build: ./services/2259395_billing_service
     ports: ["5106:5106"]
@@ -54,3 +54,19 @@ services:
       - SERVICE_NAME=billing_service
       - PORT=5106
       - FAIL_RATE=0.0 
+
+  notification_service:
+    build: ./services/2179652_notification_service
+    ports: ["5107:5107"]
+    environment:
+      - SERVICE_NAME=notification_service
+      - PORT=5107 
+      - FAIL_RATE=0.4
+
+  loyalty_service:
+    build: ./services/2140132_loyalty_service
+    ports: ["5108:5108"]
+    environment:
+      - SERVICE_NAME=loyalty_service
+      - PORT=5108
+      - FAIL_RATE=0.0
